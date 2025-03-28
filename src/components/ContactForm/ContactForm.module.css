@@ -1,0 +1,33 @@
+.contactFormSection {
+  margin-bottom: 30px;
+}
+
+.form {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.labelInputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label {
+  padding-bottom: 4px;
+}
+
+.input {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  transition: border-color .25s ease;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: #6979f8
+  }
+}

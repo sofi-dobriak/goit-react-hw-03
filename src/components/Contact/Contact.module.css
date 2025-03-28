@@ -1,0 +1,31 @@
+.contactsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  min-width: 260px;
+}
+
+.contactButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconTextContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button {
+  margin: 0;
+}
