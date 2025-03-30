@@ -1,11 +1,18 @@
 .form {
-  padding: 20px;
+  border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
+  background-color: transparent;
   width: 100%;
   max-width: 280px;
-  border: 1px solid rgb(213, 213, 213);
-  background-color: #2f2f2fa1;
+  padding: 20px;
   margin-bottom: 30px;
+}
+
+
+@media (max-width: 425px) {
+  .form {
+    margin: 0 auto 30px;
+  }
 }
 
 .labelInputContainer {
@@ -19,10 +26,11 @@
 }
 
 .input {
-  font-family: 'Montserrat', sans-serif;
-  border: 1px solid rgb(213, 213, 213);
-  background-color: transparent;
+  font-family: inherit;
+  color: #e4e4e4;
+  border: 1px solid rgba(228, 228, 228, 0.6);
   border-radius: 8px;
+  background-color: transparent;
   padding: 8px;
   transition: border-color .25s ease;
 
@@ -34,5 +42,5 @@
 }
 
 .error {
-  color: red;
+  color: #ff647c;
 }
