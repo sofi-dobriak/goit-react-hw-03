@@ -11,7 +11,9 @@
 }
 
 .input {
-  border: 1px solid black;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid rgb(213, 213, 213);
+  background-color: #2f2f2fa1;
   border-radius: 8px;
   padding: 8px;
   transition: border-color .25s ease;

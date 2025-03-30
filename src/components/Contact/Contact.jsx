@@ -2,7 +2,7 @@ import s from './Contact.module.css';
 import { IoPersonSharp } from 'react-icons/io5';
 import { FaPhone } from 'react-icons/fa6';
 
-const Contact = ({ name, number }) => {
+const Contact = ({ id, name, number, onDelete }) => {
     return (
         <li className={s.contactsItem}>
             <div className={s.contactButtonContainer}>
@@ -18,7 +18,9 @@ const Contact = ({ name, number }) => {
                     </div>
                 </div>
 
-                <button className={s.button}>Delete</button>
+                <button onClick={() => onDelete(id)} className={s.button}>
+                    Delete
+                </button>
             </div>
         </li>
     );
