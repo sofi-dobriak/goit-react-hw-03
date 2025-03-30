@@ -1,12 +1,31 @@
-# React + Vite
+# Phonebook App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application allows you to store and manage your contacts. It offers several useful features for working with contacts.
 
-Currently, two official plugins are available:
+## Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Add Contacts**
 
-## Expanding the ESLint configuration
+    - You can add new contacts by providing a name and phone number.
+    - [Yup](https://github.com/jquense/yup) library is used for validation:
+        - Name must be between 2 to 16 characters.
+        - Phone number can only contain digits and can be separated by dashes (using a regular expression).
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Search Contacts by Name**
+
+    - You can search for contacts by name.
+
+3. **Delete Contacts**
+
+    - You can delete contacts from the phonebook.
+
+4. **Save Contacts in Local Storage**
+    - Contacts are stored in the browser's [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+    - Data persists even when the page is reloaded.
+
+## Technologies:
+
+-   **React** for building the interface.
+-   **Formik** for handling forms.
+-   **Yup** for validation.
+-   **LocalStorage** for data persistence.
