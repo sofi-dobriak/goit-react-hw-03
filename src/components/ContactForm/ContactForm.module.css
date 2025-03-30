@@ -1,7 +1,8 @@
 .form {
   padding: 20px;
   border-radius: 8px;
-  max-width: 300px;
+  width: 100%;
+  max-width: 280px;
   border: 1px solid rgb(213, 213, 213);
   background-color: #2f2f2fa1;
   margin-bottom: 30px;
@@ -31,7 +32,6 @@
     border-color: #6979f8
   }
 }
-
 
 .error {
   color: red;

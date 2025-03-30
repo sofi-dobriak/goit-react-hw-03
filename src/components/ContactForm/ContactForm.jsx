@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const FeedbackSchema = Yup.object().shape({
-    contactName: Yup.string().min(2, 'Too Short!').max(50, 'Too Long!').required('Required'),
+    contactName: Yup.string().min(2, 'Too Short!').max(16, 'Too Long!').required('Required'),
     contactPhone: Yup.string()
         .matches(/^[\d-]+$/, 'Phone number must contain only digits')
         .min(5, 'Too Short!')
