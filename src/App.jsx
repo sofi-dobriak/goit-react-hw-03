@@ -2,25 +2,23 @@ import Title from './components/Title/Title';
 import ContactForm from './components/ContactForm/ContactForm';
 import SearchBox from './components/SearchBox/SearchBox';
 import ContactList from './components/ContactList/ContactList';
-import data from './assets/data/contact-data.json';
 import { useEffect, useState } from 'react';
 
 function App() {
     const [contacts, setContacts] = useState(
-        () => JSON.parse(localStorage.getItem('contacts-key')) ?? data
+        () => JSON.parse(localStorage.getItem('contacts-key')) ?? []
     );
-
     const [filter, setFilter] = useState('');
 
-    useEffect(() => {
-        localStorage.setItem('contacts-key', JSON.stringify(contacts));
-    }, [contacts]);
-
-    const addContact = newContact => {
+    const addContacts = newContact => {
         setContacts(prevContacts => {
             return [...prevContacts, newContact];
         });
     };
+
+    useEffect(() => {
+        localStorage.setItem('contacts-key', JSON.stringify(contacts));
+    }, [contacts]);
 
     const deleteContacts = contactID => {
         setContacts(prevContacts => {
@@ -32,12 +30,16 @@ function App() {
         contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
+    const hasContacts = visibleContacts.length > 0;
+
     return (
         <>
             <Title />
-            <ContactForm onAddContact={addContact} />
+            <ContactForm onAddContacts={addContacts} />
             <SearchBox value={filter} onFilter={setFilter} />
-            <ContactList contacts={visibleContacts} onDelete={deleteContacts} />
+
+            {hasContacts && <ContactList contacts={visibleContacts} onDelete={deleteContacts} />}
+            {!hasContacts && <p>No contacts</p>}
         </>
     );
 }

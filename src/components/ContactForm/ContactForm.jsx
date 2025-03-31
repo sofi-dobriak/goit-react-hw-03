@@ -12,14 +12,14 @@ const FeedbackSchema = Yup.object().shape({
         .required('Required'),
 });
 
-const initialValues = {
+const initializedValue = {
     contactName: '',
     contactPhone: '',
 };
 
-const ContactForm = ({ onAddContact }) => {
+const ContactForm = ({ onAddContacts }) => {
     const handleSubmit = (values, actions) => {
-        onAddContact({
+        onAddContacts({
             id: nanoid(),
             name: values.contactName,
             number: values.contactPhone,
@@ -30,7 +30,7 @@ const ContactForm = ({ onAddContact }) => {
 
     return (
         <Formik
-            initialValues={initialValues}
+            initialValues={initializedValue}
             onSubmit={handleSubmit}
             validationSchema={FeedbackSchema}
         >
@@ -39,7 +39,7 @@ const ContactForm = ({ onAddContact }) => {
                     <label className={s.label} htmlFor='contactName'>
                         Name
                     </label>
-                    <Field className={s.input} type='text' name='contactName' />
+                    <Field className={s.input} type='text' name='contactName' placeholder='Mark' />
                     <ErrorMessage name='contactName' component='span' className={s.error} />
                 </div>
 
@@ -47,7 +47,12 @@ const ContactForm = ({ onAddContact }) => {
                     <label className={s.label} htmlFor='contactPhone'>
                         Number
                     </label>
-                    <Field className={s.input} type='tel' name='contactPhone' />
+                    <Field
+                        className={s.input}
+                        type='tel'
+                        name='contactPhone'
+                        placeholder='111-11-11'
+                    />
                     <ErrorMessage name='contactPhone' component='span' className={s.error} />
                 </div>
 
