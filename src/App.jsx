@@ -39,7 +39,7 @@ function App() {
             <SearchBox value={filter} onFilter={setFilter} />
 
             {hasContacts && <ContactList contacts={visibleContacts} onDelete={deleteContacts} />}
-            {!hasContacts && <p>No contacts</p>}
+            {!hasContacts && <p className='noContacts'>No contacts</p>}
         </>
     );
 }

@@ -43,3 +43,9 @@ button {
     transition: background-color 0.25s ease;
   }
 }
+
+@media (max-width: 425px) {
+  .noContacts {
+    text-align: center;
+  }
+}
